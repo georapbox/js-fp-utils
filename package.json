@@ -1,0 +1,27 @@
+{
+  "name": "js-fp-utils",
+  "version": "0.1.0",
+  "description": "Javascript utilities for functional programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georapbox/js-fp-utils.git"
+  },
+  "keywords": [
+    "javascript",
+    "functional-programming",
+    "utilities"
+  ],
+  "author": "George Raptis <georapbox@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/georapbox/js-fp-utils/issues"
+  },
+  "homepage": "https://github.com/georapbox/js-fp-utils#readme",
+  "devDependencies": {
+    "eslint": "~6.6.0"
+  }
+}

@@ -29,3 +29,7 @@ const reverseAndHead = compose(head, reverse);
 const reverseHeadAndCapitalize = compose(capitalize, reverseAndHead);
 reverseHeadAndCapitalize('hello'); // -> "O"
 ```
+
+## ES5 version
+
+https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBKC2AHEECmMC8MAUA6fAZpAJSYB8MAHuTERLgE6oAmArsKgEoCWA5gBZRs2AJ4AaWqQwUCo4hMrEA3EA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=es2015&prettier=false&targets=&version=7.6.4&externalPlugins=

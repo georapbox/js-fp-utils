@@ -4,7 +4,9 @@
   "description": "Javascript utilities for functional programming",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",

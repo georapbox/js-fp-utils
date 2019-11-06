@@ -1,28 +1,29 @@
 /**
- * Chains together functions to create a new function following the mathematical model of function composition.
- * In mathematics f ∘ g (pronounced "f composed with g") is the function that given x, returns f(g(x)).
- * Following the mathematical model `compose(f, g)(x)` should equal `f(g(x))`.
- * Thus it is made clear that function passed as arguments should be read from right to left.
+ * Performs right-to-left function composition.
+ * The rightmost function may have any arity; the remaining functions must be unary.
  *
- * @param {function} [fns...] One or more functions to compose.
- * @returns {function} A new function as the result of the composition.
+ * @module compose
+ * @param {function} [...fns] The functions to compose
+ * @throws {Error} Throws `Error` if `fns` length is `0`.
+ * @returns {function} A new function as the result of the composition
  * @example
  *
+ * const inc = x => x + 1;
+ * const double = x => x * 2;
+ *
+ * compose(inc, double)(3); // => 7
+ * compose(double, inc)(3); // => 8
+ *
  * const capitalize = a => a.toUpperCase();
- * const head = a => a[0];
- * const reverse = a => a.split('').reverse().join('');
- *
- * // Example 1: First reverse then capitalize
- * compose(capitalize, reverse)('hello'); // -> "OLLEH"
- *
- * // Example 2: First reverse, then get the first character and finally capitalize
- * compose(capitalize, head, reverse)('hello'); // -> "O"
- *
- * // Example 3: Same as above but combining compositions
- * const reverseAndHead = compose(head, reverse);
- * const reverseHeadAndCapitalize = compose(capitalize, reverseAndHead);
- * reverseHeadAndCapitalize('hello'); // -> "O"
+ * const greeting = (firstName, lastName) => `Hello, my name is ${firstName} ${lastName}.`;
+ * const shoutGreeting = compose(capitalize, greeting);
+ * shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
  */
-const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x);
+const compose = (...fns) => (...args) => {
+  if (fns.length === 0) {
+    throw new Error('compose requires at least one argument');
+  }
+  return fns.reduceRight((_, fn) => (args = [fn(...args)], args[0]), args);
+};
 
 module.exports = compose;

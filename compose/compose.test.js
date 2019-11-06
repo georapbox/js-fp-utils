@@ -8,7 +8,7 @@ describe('compose', () => {
   const double = x => x * 2;
 
   it('should perform right-to-left function composition', () => {
-    expect(compose()).toThrow();
+    expect(() => compose()).toThrow();
 
     expect(compose(capitalize, reverse)('hello')).toBe('OLLEH');
 

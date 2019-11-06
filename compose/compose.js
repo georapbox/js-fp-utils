@@ -19,11 +19,12 @@
  * const shoutGreeting = compose(capitalize, greeting);
  * shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
  */
-const compose = (...fns) => (...args) => {
+const compose = (...fns) => {
   if (fns.length === 0) {
     throw new Error('compose requires at least one argument');
   }
-  return fns.reduceRight((_, fn) => (args = [fn(...args)], args[0]), args);
+
+  return (...args) => fns.reduceRight((_, fn) => (args = [fn(...args)], args[0]), args);
 };
 
 module.exports = compose;

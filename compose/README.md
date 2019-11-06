@@ -1,35 +1,33 @@
-<a name="compose"></a>
+## compose => <code>function</code>
 
-## compose() ⇒ <code>function</code>
-Chains together functions to create a new function following the mathematical model of function composition.
-In mathematics f ∘ g (pronounced "f composed with g") is the function that given x, returns f(g(x)).
-Following the mathematical model `compose(f, g)(x)` should equal `f(g(x))`.
-Thus it is made clear that function passed as arguments should be read from right to left.
+Performs right-to-left function composition.
+The rightmost function may have any arity; the remaining functions must be unary.
 
-**Returns**: <code>function</code> - A new function as the result of the composition.  
+**Returns**: <code>function</code> - A new function as the result of the composition
+
+**Throws**:
+
+- <code>Error</code> Throws `Error` if `fns` length is `0`.
+
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [...fns] | <code>function</code> | One or more functions to compose. |
+| [...fns] | <code>function</code> | The functions to compose |
 
-**Example**  
+**Example**
 ```js
+const inc = x => x + 1;
+const double = x => x * 2;
+
+compose(inc, double)(3); // => 7
+compose(double, inc)(3); // => 8
+
 const capitalize = a => a.toUpperCase();
-const head = a => a[0];
-const reverse = a => a.split('').reverse().join('');
-
-// Example 1: First reverse then capitalize
-compose(capitalize, reverse)('hello'); // -> "OLLEH"
-
-// Example 2: First reverse, then get the first character and finally capitalize
-compose(capitalize, head, reverse)('hello'); // -> "O"
-
-// Example 3: Same as above but combining compositions
-const reverseAndHead = compose(head, reverse);
-const reverseHeadAndCapitalize = compose(capitalize, reverseAndHead);
-reverseHeadAndCapitalize('hello'); // -> "O"
+const greeting = (firstName, lastName) => `Hello, my name is ${firstName} ${lastName}.`;
+const shoutGreeting = compose(capitalize, greeting);
+shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
 ```
 
-## ES5 version
+**ES5**
 
-https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBKC2AHEECmMC8MAUA6fAZpAJSYB8MAHuTERLgE6oAmArsKgEoCWA5gBZRs2AJ4AaWqQwUCo4hMrEA3EA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=es2015&prettier=false&targets=&version=7.6.4&externalPlugins=
+https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=PQKhCgAIUgFBTATgMwPaILYGdKIJYDmAFgC4C0JqZANvMiZMgK4B2AxiXqi5G6hgAdUWPJ24A6KDAAqReLkKkMwhs3ZieGAIYBPSES0A3eVpZ6t-EjoDckEnNzxteFi4KNWHLixwYmWBgAjeVYLHUloKUgAAWUAEyZaXn4hLHgo6IELLQxIAG81L24AX0gAbXFK5B8AXUhZeUKNHEpkwWF06Bj7RFQAdxw8gFFEXsRS2V6ByAADEbGZyDxkWeqsRdoWAnslnBmABhmImGjEeBImRB98pu9SgEFIFng-j3VvSC0WhzOsRIZUCt7PI-O0RBoMvAAB45AS0KRRPg-BguNiQAC8kChGIAfFjIABqSAARmsiO4AUgcVQTECSUx2PReOxMAATGTIl1Qal4AAKVEAGipNLp8AAlLyAMxi2zAYC4yAAdnJYL51NptCFqIl0tl8qZkAAHAiuRSGGwtAJRFpqHgAF7yTFaBVacSUACqAgESAAwl8-TLycjIAQzuc3BjILzkHhEAEAHI5eBC6hfEiJjDihUzAAS8Go1FQQowehYSd2kAAJAVYwmk6Vq6m65niuIZhyYEjKVgiDSSABxMOcLaR7kdXkWq0kG325MhoduQNdHt9wfwcNbXkAcgAUqgiCwt0KtwARVDwLcyyByhVbnNDAAyD4A8kKALIATUg8fub6GkAASQAZUgHdnxzeNIBPZ8hnELcpGAcAu3NFIOkjXlKnENYxQVDDKgsAgsBwg08igJYVmjHxxE2bYiAxdFMX2HDSMgVi7CIKYnheSB5nQbcxzSRwAEcmFjeAcC0BhaDTSBuBMRACCYTMWBIS8OUgYoyLOC4rkYKizgSNh4AAJUUEheV5AB9IVqmIvFeQInBMTKao8PERyxRqIVHLKfYajFbyFKIslijJcB4kSeBxGhIREBIJy2h5MkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=env&prettier=false&targets=&version=7.7.1&externalPlugins=

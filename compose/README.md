@@ -32,4 +32,4 @@ shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
 
 ### Related
 
-- [pipe](pipe)
+- [pipe](../pipe)

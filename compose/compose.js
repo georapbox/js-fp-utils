@@ -4,7 +4,7 @@
  *
  * @module compose
  * @param {function} [...fns] The functions to compose
- * @throws {Error} Throws `Error` if `fns` length is `0`.
+ * @throws {Error} if invoked with no functions as arguments
  * @returns {function} A new function as the result of the composition
  * @example
  *

@@ -32,4 +32,4 @@ shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
 
 ### Related
 
-- [compose](compose)
+- [compose](https://github.com/georapbox/js-fp-utils/tree/master/compose)

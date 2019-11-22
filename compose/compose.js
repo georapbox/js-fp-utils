@@ -4,7 +4,6 @@
  *
  * @module compose
  * @param {function} [...fns] The functions to compose
- * @throws {Error} if invoked with no functions as arguments
  * @returns {function} A new function as the result of the composition
  * @example
  *
@@ -21,10 +20,14 @@
  */
 const compose = (...fns) => {
   if (fns.length === 0) {
-    throw new Error('compose requires at least one argument');
+    return fn => fn;
   }
 
-  return (...args) => fns.reduceRight((_, fn) => (args = [fn(...args)], args[0]), args);
+  if (fns.length === 1) {
+    return fns[0];
+  }
+
+  return fns.reduce((a, b) => (...args) => a(b(...args)));
 };
 
 module.exports = compose;

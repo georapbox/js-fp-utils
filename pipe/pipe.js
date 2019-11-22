@@ -4,7 +4,6 @@
  *
  * @module pipe
  * @param {function} [...fns] The functions to compose
- * @throws {Error} if invoked with no functions as arguments
  * @returns {function} A new function as the result of the composition
  * @example
  *
@@ -21,10 +20,14 @@
  */
 const pipe = (...fns) => {
   if (fns.length === 0) {
-    throw new Error('pipe requires at least one argument');
+    return fn => fn;
   }
 
-  return (...args) => fns.reduce((_, fn) => (args = [fn(...args)], args[0]), args);
+  if (fns.length === 1) {
+    return fns[0];
+  }
+
+  return fns.reduceRight((a, b) => (...args) => a(b(...args)));
 };
 
 module.exports = pipe;

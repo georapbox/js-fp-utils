@@ -8,7 +8,9 @@ describe('pipe', () => {
   const double = x => x * 2;
 
   it('should perform left-to-right function composition', () => {
-    expect(() => pipe()).toThrow();
+    expect(pipe()(1)).toBe(1);
+
+    expect(pipe()(1, 2, 3)).toBe(1);
 
     expect(pipe(capitalize, reverse)('hello')).toBe('OLLEH');
 
@@ -29,5 +31,6 @@ describe('pipe', () => {
     const greeting = (firstName, lastName) => `Hello, my name is ${firstName} ${lastName}.`;
     const shoutGreeting = pipe(greeting, capitalize);
     expect(shoutGreeting('John', 'Doe')).toBe('HELLO, MY NAME IS JOHN DOE.');
+    expect(pipe(shoutGreeting('John', 'Doe'))).toBe('HELLO, MY NAME IS JOHN DOE.');
   });
 });

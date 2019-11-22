@@ -8,7 +8,11 @@ describe('compose', () => {
   const double = x => x * 2;
 
   it('should perform right-to-left function composition', () => {
-    expect(() => compose()).toThrow();
+    expect(compose()()).toBeUndefined();
+
+    expect(compose()(1)).toBe(1);
+
+    expect(compose()(1, 2, 3)).toBe(1);
 
     expect(compose(capitalize, reverse)('hello')).toBe('OLLEH');
 
@@ -29,5 +33,6 @@ describe('compose', () => {
     const greeting = (firstName, lastName) => `Hello, my name is ${firstName} ${lastName}.`;
     const shoutGreeting = compose(capitalize, greeting);
     expect(shoutGreeting('John', 'Doe')).toBe('HELLO, MY NAME IS JOHN DOE.');
+    expect(compose(shoutGreeting('John', 'Doe'))).toBe('HELLO, MY NAME IS JOHN DOE.');
   });
 });

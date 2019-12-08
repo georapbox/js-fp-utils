@@ -21,10 +21,10 @@
  * addTwo(3); // => 6
  */
 const curry = (func, arity) => {
-  return function curried(...args1) {
-    return args1.length >= (arity || func.length)
-      ? func(...args1)
-      : (...args2) => curried(...[...args1, ...args2]);
+  return function curried(...args_a) {
+    return args_a.length >= (arity || func.length)
+      ? func(...args_a)
+      : (...args_b) => curried(...args_a, ...args_b);
   };
 };
 

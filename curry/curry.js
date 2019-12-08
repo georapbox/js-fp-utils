@@ -2,11 +2,11 @@
  * Transforms a function of N arguments in such a way that it can
  * be called as a chain of N functions each with a single argument (arity: 1).
  *
- * @param {function} func The initial function to be curried.
- * @param {Number} [arity=func.lenght] The arity of the provided function.
- * Useful in cases that arity cannot be determined by `func.length`.
+ * @param {function} f The initial function to be curried.
+ * @param {Number} [arity=f.length] The arity of the provided function.
+ * Useful in cases that arity cannot be determined by `f.length`.
  * As of ES2015 when a function has a rest parameter or at least one
- * parameter with default value, the `func.length` is not properly calculated.
+ * parameter with default value, the `f.length` is not properly calculated.
  * @returns {function} A curried equivalent of the provided function
  * @example
  *
@@ -20,10 +20,10 @@
  * const addTwo = addOne(2);
  * addTwo(3); // => 6
  */
-const curry = (func, arity) => {
+const curry = (f, arity) => {
   return function curried(...args_a) {
-    return args_a.length >= (arity || func.length)
-      ? func(...args_a)
+    return args_a.length >= (arity || f.length)
+      ? f(...args_a)
       : (...args_b) => curried(...args_a, ...args_b);
   };
 };

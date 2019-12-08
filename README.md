@@ -6,6 +6,7 @@ Javascript functional programming utilities
 
 | Name | Description |
 |------|-------------|
+| [curry](https://github.com/georapbox/js-fp-utils/tree/master/curry) | Returns a curried equivalent of the provided function. |
 | [compose](https://github.com/georapbox/js-fp-utils/tree/master/compose) | Performs right-to-left function composition. |
 | [pipe](https://github.com/georapbox/js-fp-utils/tree/master/pipe) | Performs left-to-right function composition. |
 

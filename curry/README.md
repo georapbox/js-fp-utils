@@ -1,4 +1,6 @@
-## curry(f, [arity]) => <code>function</code>
+## curry
+
+`curry(f: Function, arity?: Number) => (...: [...Any]) => Any`
 
 Transforms a function of N arguments in such a way that it can be called as a chain of N functions each with a single argument (arity: 1).
 

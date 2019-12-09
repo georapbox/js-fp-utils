@@ -1,4 +1,6 @@
-## pipe => <code>function</code>
+## pipe
+
+`pipe(...fns: [...Function]) => Function`
 
 Performs left-to-right function composition.
 The leftmost function may have any arity; the remaining functions must be unary.

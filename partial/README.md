@@ -1,4 +1,6 @@
-## partial(f, [...args]) => <code>function</code>
+## partial
+
+`partial(f: Function, ...args?: [...Any]) => (...: [...Any]) => Any`
 
 Apply partially a function `f` to its arguments by returning a function `g`.
 When applied, `g` returns the result of applying `f` to the arguments provided initially followed by the arguments provided to `g`.

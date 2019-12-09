@@ -7,7 +7,8 @@
     "lint": "eslint src/**/*.js",
     "test": "jest",
     "test:w": "jest --watch",
-    "build": "babel src/**/*.js -d lib --ignore 'src/**/*.test.js'"
+    "build": "babel src/**/*.js -d lib --ignore 'src/**/*.test.js'",
+    "prepush": "npm-run-all --parallel test build"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "run-p test build"
+      "pre-push": "npm run prepush"
     }
   }
 }

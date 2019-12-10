@@ -8,6 +8,7 @@ Javascript functional programming utilities
 |------|-------------|
 | [curry](https://github.com/georapbox/js-fp-utils/tree/master/src/curry) | Returns a curried equivalent of the provided function. |
 | [compose](https://github.com/georapbox/js-fp-utils/tree/master/src/compose) | Performs right-to-left function composition. |
+| [flip](https://github.com/georapbox/js-fp-utils/tree/master/src/flip) | Creates a function that invokes the original function with its parameters reversed. |
 | [partial](https://github.com/georapbox/js-fp-utils/tree/master/src/partial) | Apply partially a function to its arguments. |
 | [pipe](https://github.com/georapbox/js-fp-utils/tree/master/src/pipe) | Performs left-to-right function composition. |
 

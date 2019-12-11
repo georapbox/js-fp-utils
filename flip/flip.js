@@ -1,7 +1,6 @@
 /**
  * Creates a function that invokes the original function with its parameters reversed.
  *
- * @module flip
  * @param {function} func The function to invoke with its parameters reversed.
  * @returns {function} Returns the new flipped function.
  * @example

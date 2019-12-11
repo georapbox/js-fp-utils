@@ -2,15 +2,15 @@
 
 `partial(f: Function, ...args?: [...Any]) => (...: [...Any]) => Any`
 
-Apply partially a function `f` to its arguments by returning a function `g`.
+Takes a function `f` and a list of arguments, and returns a function `g`.
 When applied, `g` returns the result of applying `f` to the arguments provided initially followed by the arguments provided to `g`.
 
-**Returns**: <code>function</code> - A function `g` that invokes the original `f` with the remaining arguments.
+**Returns**: <code>function</code> - Returns the new partially applied function.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| f | <code>function</code> | The initial function to be partially applied. |
-| [...args] | <code>\*</code> | Initially provided arguments to `f`. |
+| f | <code>function</code> | The function to partially apply arguments to. |
+| [...args] | <code>\*</code> | The arguments to be partially applied. |
 
 **Example**
 ```js
@@ -30,4 +30,5 @@ p4(5, 10, 15); // => 30
 
 ### Related
 
-- [curry](https://github.com/georapbox/js-fp-utils/tree/master/src/curry)
+- [partialRight](https://github.com/georapbox/js-fp-utils/tree/master/partialRight)
+- [curry](https://github.com/georapbox/js-fp-utils/tree/master/curry)

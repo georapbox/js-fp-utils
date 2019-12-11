@@ -26,4 +26,4 @@ addTwo(3); // => 6
 
 ### Related
 
-- [partial](https://github.com/georapbox/js-fp-utils/tree/master/src/partial)
+- [partial](https://github.com/georapbox/js-fp-utils/tree/master/partial)

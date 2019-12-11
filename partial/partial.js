@@ -1,11 +1,10 @@
 /**
- * Apply partially a function `f` to its arguments by returning a function `g`.
+ * Takes a function `f` and a list of arguments, and returns a function `g`.
  * When applied, `g` returns the result of applying `f` to the arguments provided initially followed by the arguments provided to `g`.
  *
- * @module partial
- * @param {function} f The initial function to be partially applied.
- * @param {*} [...args] Initially provided arguments to `f`.
- * @returns {function} A function `g` that invokes the original `f` with the remaining arguments.
+ * @param {function} f The function to partially apply arguments to.
+ * @param {*} [...args] The arguments to be partially applied.
+ * @returns {function} Returns the new partially applied function.
  * @example
  *
  * const add = (a, b, c) => a + b + c;

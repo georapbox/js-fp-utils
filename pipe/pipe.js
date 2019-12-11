@@ -1,8 +1,7 @@
 /**
- * Performs right-to-left function composition.
- * The rightmost function may have any arity; the remaining functions must be unary.
+ * Performs left-to-right function composition.
+ * The leftmost function may have any arity; the remaining functions must be unary.
  *
- * @module compose
  * @param {function} [...fns] The functions to compose
  * @returns {function} A new function as the result of the composition
  * @example
@@ -10,15 +9,15 @@
  * const inc = x => x + 1;
  * const double = x => x * 2;
  *
- * compose(inc, double)(3); // => 7
- * compose(double, inc)(3); // => 8
+ * pipe(inc, double)(3); // => 8
+ * pipe(double, inc)(3); // => 7
  *
  * const capitalize = a => a.toUpperCase();
  * const greeting = (firstName, lastName) => `Hello, my name is ${firstName} ${lastName}.`;
- * const shoutGreeting = compose(capitalize, greeting);
+ * const shoutGreeting = pipe(greeting, capitalize);
  * shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
  */
-const compose = (...fns) => {
+const pipe = (...fns) => {
   if (fns.length === 0) {
     return fn => fn;
   }
@@ -27,7 +26,7 @@ const compose = (...fns) => {
     return fns[0];
   }
 
-  return fns.reduce((a, b) => (...args) => a(b(...args)));
+  return fns.reduceRight((a, b) => (...args) => a(b(...args)));
 };
 
-module.exports = compose;
+module.exports = pipe;

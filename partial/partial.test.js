@@ -16,7 +16,7 @@ describe('partial', () => {
     expect(p4(5, 10, 15)).toBe(30);
   });
 
-  it('providing more arguments than expected has no effect', () => {
+  it('providing more arguments than expected in the newly created function should have no effect', () => {
     const add = (a, b) => a + b;
     const p1 = partial(add, 1);
     expect(p1(2, 4, 5, 6)).toBe(3);

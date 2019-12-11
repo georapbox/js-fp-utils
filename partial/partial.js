@@ -1,6 +1,5 @@
 /**
- * Takes a function `f` and a list of arguments, and returns a function `g`.
- * When applied, `g` returns the result of applying `f` to the arguments provided initially followed by the arguments provided to `g`.
+ * Creates a new function that invokes the provided function `f` with `partials` prepended to the arguments it receives.
  *
  * @param {function} f The function to partially apply arguments to.
  * @param {*} [...args] The arguments to be partially applied.

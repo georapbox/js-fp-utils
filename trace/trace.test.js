@@ -1,8 +1,8 @@
 const trace = require('./trace.js');
-const compose = require('../compose/compose.js');
 
 describe('trace', () => {
-  it('inspects', () => {
+  it('inspects the values between functions', () => {
+    const compose = (...fns) => fns.reduce((a, b) => (...args) => a(b(...args)));
     const outputs = [];
     const fakeLog = x => outputs.push(x);
 

@@ -2,7 +2,7 @@
  * Inspect the values between functions in a point-free style when using function composition.
  *
  * @param {String} label The label to use in order to inspect the value.
- * @param {function} [log=console.log] The logging method to use instead.
+ * @param {function} [log=console.log] (Optional) The logging method to use instead.
  * @returns {function} Returns a function that when invoked, prints the value along with the label provided and returns the value itself.
  * @example
  *
@@ -22,7 +22,7 @@
  * // => "after inc: 13"
  * // => "after double again: 26"
  */
-const trace = (label, log = console.log) => value => {
+const trace = (label, log = console.log.bind(console)) => value => {
   log(`${label}: ${value}`);
   return value;
 };

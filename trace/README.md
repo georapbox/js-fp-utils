@@ -1,5 +1,7 @@
 ## trace
 
+`trace(label: String, log?: Function) => Any => Any`
+
 Inspect the values between functions in a point-free style when using function composition.
 
 **Returns**: <code>function</code> - Returns a function that when invoked, prints the value along with the label provided and returns the value itself.
@@ -7,7 +9,7 @@ Inspect the values between functions in a point-free style when using function c
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | label | <code>String</code> |  | The label to use in order to inspect the value. |
-| [log] | <code>function</code> | <code>console.log</code> | The logging method to use instead. |
+| [log] | <code>function</code> | <code>console.log</code> | (Optional) The logging method to use instead. |
 
 **Example**
 ```js

@@ -9,8 +9,6 @@
  *
  * flipped(1, 2, 3, 4); // => [4, 3, 2, 1]
  */
-// const flip = func => (...args) => func(...[...args].reverse());
-
 const flip = func => (...args) => func(...args.reverse());
 
 module.exports = flip;

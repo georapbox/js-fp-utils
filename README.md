@@ -12,6 +12,7 @@ Javascript functional programming utilities
 | [partial](https://github.com/georapbox/js-fp-utils/tree/master/partial) | Creates a new function that invokes the provided function with `partials` **prepended** to the arguments it receives. |
 | [partialRight](https://github.com/georapbox/js-fp-utils/tree/master/partialRight) | Creates a new function that invokes the provided function with `partials` **appended** to the arguments it receives. |
 | [pipe](https://github.com/georapbox/js-fp-utils/tree/master/pipe) | Performs left-to-right function composition. |
+| [trace](https://github.com/georapbox/js-fp-utils/tree/master/trace) | Inspect the values between functions in a point-free style when using function composition. |
 
 ## Tests
 

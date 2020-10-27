@@ -21,5 +21,5 @@ greetMrJoeBlack('Hello'); //=> Hello, Mr. Joe Black.
 
 ### Related
 
-- [partial](https://github.com/georapbox/js-fp-utils/tree/master/partial)
-- [curry](https://github.com/georapbox/js-fp-utils/tree/master/curry)
+- [partial](https://github.com/georapbox/js-fp-utils/tree/master/packages/partial)
+- [curry](https://github.com/georapbox/js-fp-utils/tree/master/packages/curry)

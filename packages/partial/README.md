@@ -29,5 +29,5 @@ p4(5, 10, 15); // => 30
 
 ### Related
 
-- [partialRight](https://github.com/georapbox/js-fp-utils/tree/master/partialRight)
-- [curry](https://github.com/georapbox/js-fp-utils/tree/master/curry)
+- [partialRight](https://github.com/georapbox/js-fp-utils/tree/master/packages/partialRight)
+- [curry](https://github.com/georapbox/js-fp-utils/tree/master/packages/curry)

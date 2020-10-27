@@ -27,4 +27,4 @@ shoutGreeting('John', 'Doe'); // => 'HELLO, MY NAME IS JOHN DOE.'
 
 ### Related
 
-- [compose](https://github.com/georapbox/js-fp-utils/tree/master/compose)
+- [compose](https://github.com/georapbox/js-fp-utils/tree/master/packages/compose)

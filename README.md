@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.com/georapbox/js-fp-utils.svg?branch=master)](https://travis-ci.com/georapbox/js-fp-utils)
 [![Coverage Status](https://coveralls.io/repos/github/georapbox/js-fp-utils/badge.svg?branch=master)](https://coveralls.io/github/georapbox/js-fp-utils?branch=master)
-[![Dependencies](https://david-dm.org/georapbox/js-fp-utils.svg?theme=shields.io)](https://david-dm.org/georapbox/js-fp-utils)
-[![devDependency Status](https://david-dm.org/georapbox/js-fp-utils/dev-status.svg)](https://david-dm.org/georapbox/js-fp-utils?type=dev)
 
 # js-fp-utils
 
